@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Formulário de detalhes do cartão interativo</title>
+</head>
+
+<body>
+
+    <main class="container">
+        <div class="card-container">
+            <div id="card-front">
+                <svg width="84" height="47" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="23.478" cy="23.5" rx="23.478" ry="23.5" fill="#fff"/><path d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z" stroke="#fff"/></svg>
+                <div id="output1"></div>
+                <div id="output2"></div>
+                <div id="output3"></div>
+                <div id="output4"></div>
+                <img src="bg-card-front.png" alt="card-front">
+            </div>
+            <div id="card-back"><img src="bg-card-back.png" alt="card-back"></div><div id="output5"></div>
+        </div>
+        <div class="form">
+            <form action="" method="post" id="form" >
+                
+                <label for="name-card">CARDHOLDER NAME</label>
+                <input type="text" id="name-card" class="input-field" placeholder="e.g. Jane Appleseed" maxlength="31"minlength="3" oninput="validateCardName()">
+                
+                <label for="number-card">CARD NUMBER</label>
+                <input type="text" id="number-card" 
+                class="input-field"placeholder="e.g. 1234 5678 9123 0000" maxlength="16"minlength="16"  oninput="validateCardNumber()">
+               
+                <div class="grid">
+                    <div class="label">
+                        <label for="mes">EXP. DATE (MM/YY)
+                        </label>
+                        <label for="cvv">CVV</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" id="mm" class="input-date" placeholder="MM"maxlength="2" minlength="2" oninput="validateExpMm()">
+                        <input type="text" id="yy" class="input-date" placeholder="YY"maxlength="2"minlength="2"oninput="validateExpYy()">
+                        <input type="tel" id="cvv" class="input-footer" placeholder="e.g. 123"maxlength="3"minlength="3"oninput="validateCvv()">
+                    </div>
+                </div>
+            
+                <input type="submit" value="Confim" name="submit" id="html">
+                
+            </form>
+            
+        </div>
+
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="file.js"></script>
+</body>
+
+</html>
