@@ -75,8 +75,10 @@ updateOutput();
 function updateOutput() {
   
   if (!inputNumber) {
-    document.getElementById("output1").innerHTML = "0000 0000 0000 0000"
-
+    
+    const cardNumberInput = localStorage.getItem("cardNumberInput") || "0000000000000000";
+    const formattedCardNumber = cardNumberInput.replace(/(\d{4})/g, "$1 ")
+    document.getElementById("output1").innerHTML = formattedCardNumber;
   }
   else{
  
@@ -94,21 +96,21 @@ function updateOutput() {
   }
 
   if (!inputMm) {
-    document.getElementById("output3").innerHTML = "00/"
+    document.getElementById("output3").innerHTML = localStorage.getItem("motherNumberInput /") || "00/"
   }
   else{
     document.getElementById("output3").innerHTML = inputMm
   }
 
   if (!inputYy) {
-    document.getElementById("output4").innerHTML = "00"
+    document.getElementById("output4").innerHTML = localStorage.getItem("yearNumberInput") ||"00"
   }
   else{
     document.getElementById("output4").innerHTML = inputYy;
   }
  
   if (!inputCvv) {
-    document.getElementById("output5").innerHTML = "123"
+    document.getElementById("output5").innerHTML = localStorage.getItem("cvvNumberInput") || "123"
   }
   else{
     document.getElementById("output5").innerHTML = inputCvv;
